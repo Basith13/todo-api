@@ -1,0 +1,53 @@
+{
+    "responses": {
+        "400": {
+            "description": "Server was unable to process the request sent by the client due to invalid syntax",
+            "schema": {
+                "$ref": "#/components/schemas/errorSchema"
+            }
+        },
+        "401": {
+            "description": "Unauthorized",
+            "schema": {
+            "$ref": "#/components/schemas/errorSchema"
+            }
+        },
+        "404": {
+            "description": "The specified resource was not found",
+            "schema": {
+            "$ref": "#/components/schemas/errorSchema"
+            }
+        },
+        "500": {
+            "description": "Internal server error",
+            "schema": {
+            "$ref": "#/components/schemas/errorSchema"
+            }
+        }
+    },
+    "schemas": {
+        "errorSchema": {
+            "type": "object",
+            "properties": {
+                "path": {
+                    "type": "string"
+                },
+                "method": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "pathMessage": {
+                    "type": "string"
+                },
+                "requestBody": {
+                    "type": "string"
+                },
+                "error": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
